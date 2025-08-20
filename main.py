@@ -105,6 +105,6 @@ def main():
             print("Thanks for playing, bye! 👋")
             break
             
-#volání
+#spuštění hry
 if __name__ == "__main__":
     main()
