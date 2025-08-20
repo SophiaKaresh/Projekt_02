@@ -14,7 +14,6 @@ def greet():
     print("Hi there!")
     print(SEPARATOR)
     print("I've generated a random 4 digit number for you.\nLet's play a bulls and cows game.")
-    print(SEPARATOR)
 
 def secret_number():
     """Vytvoří tajné unikátní čtyřmístné číslo, nezačínající nulou a bez duplicit."""
@@ -50,6 +49,11 @@ def pluralize(count, word):
     """Vrátí správný tvar slova podle počtu."""
     return f"{count} {word}" if count == 1 else f"{count} {word}s"
 
+def get_input(prompt):
+    """Vypíše oddělovač a vyžádá si vstup od uživatele."""
+    print(SEPARATOR)
+    return input(prompt)
+
 def main():
     greet()
     game_stats = []  # ukládání počtu pokusů pro každou hru
@@ -64,7 +68,7 @@ def main():
         try:
             while bulls != CODE_LENGTH:
                 prompt = "Enter a number: " if first_prompt else ">>> "
-                tip = input(prompt)
+                tip = get_input(prompt)
                 first_prompt = False
 
                 if not control_tip(tip):
@@ -90,7 +94,7 @@ def main():
             print("\nExiting game. Bye! 👋")
             break
 
-        again = input("Do you want to play again? (y/n): ").lower()
+        again = get_input("Do you want to play again? (y/n): ").lower()
         if again != "y":
             print(SEPARATOR)
             print("Game statistics:")
