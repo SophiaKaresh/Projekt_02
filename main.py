@@ -10,13 +10,11 @@ import time
 CODE_LENGTH = 4
 SEPARATOR = "-" * 55
 
-
 def greet():
     print("Hi there!")
     print(SEPARATOR)
     print("I've generated a random 4 digit number for you.\nLet's play a bulls and cows game.")
     print(SEPARATOR)
-
 
 def secret_number():
     """Vytvoří tajné unikátní čtyřmístné číslo, nezačínající nulou a bez duplicit."""
@@ -24,7 +22,6 @@ def secret_number():
     all_numbers = "0123456789"
     rest_of_numbers = random.sample([n for n in all_numbers if n != first_number], CODE_LENGTH - 1)
     return first_number + "".join(rest_of_numbers)
-
 
 def control_tip(tip):
     """Zkontroluje, zda tip splňuje podmínky."""
@@ -42,7 +39,6 @@ def control_tip(tip):
         return False
     return True
 
-
 def evaluate_tip(secret, tip):
     """Spočítá kolik je shod čísla na správné pozici - bulls,
     a kolik je uhodnutých čísel na nesprávné pozici - cows"""
@@ -50,11 +46,9 @@ def evaluate_tip(secret, tip):
     cows = sum(c in secret for c in tip) - bulls
     return bulls, cows
 
-
 def pluralize(count, word):
     """Vrátí správný tvar slova podle počtu."""
     return f"{count} {word}" if count == 1 else f"{count} {word}s"
-
 
 def main():
     greet()
@@ -104,7 +98,6 @@ def main():
                 print(f"Game {i}: {g} guesses")
             print("Thanks for playing, bye! 👋")
             break
-
 
 if __name__ == "__main__":
     main()
