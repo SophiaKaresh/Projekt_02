@@ -10,6 +10,7 @@ import time
 CODE_LENGTH = 4
 SEPARATOR = "-" * 55
 
+#vytvoření definic pro funkčnost hry
 def greet():
     print("Hi there!")
     print(SEPARATOR)
@@ -54,6 +55,7 @@ def get_input(prompt):
     print(SEPARATOR)
     return input(prompt)
 
+#hra
 def main():
     greet()
     game_stats = []  # ukládání počtu pokusů pro každou hru
@@ -102,6 +104,7 @@ def main():
                 print(f"Game {i}: {g} guesses")
             print("Thanks for playing, bye! 👋")
             break
-
+            
+#volání
 if __name__ == "__main__":
     main()
